@@ -1,0 +1,72 @@
+.Scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  
+    height: 2.2rem;
+    width: 38rem;
+    height: 2.2rem;
+    margin: 1rem;
+    border-radius: var(--bord-curv);
+  
+    color: var(--base-text);
+    background-color: var(--topbar);
+    font-weight: 600;
+  
+    filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+}
+  
+.sbHeaderPlayer {
+    display: inline;
+    padding: 0px;
+    
+    height: 100%;
+    width: 40%;
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sbTitle {
+    display: inline;
+    width: 8rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 0.9rem;
+}
+
+.sbBox{
+    display: inline;
+
+    height: 100%;
+    width: 2.2rem;
+
+    padding: 0px;
+    background-color:  var(--input-bk);
+}
+
+.sbR {
+    float: right;
+}
+
+.sbL {
+    float: left;
+}
+
+.sbSmall{
+    font-size: 0.8rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.sbP1{
+    text-align:right;
+    padding:1rem;
+}
+
+.sbP2{
+    text-align:left;
+    padding:1rem;
+}

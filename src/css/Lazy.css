@@ -1,0 +1,59 @@
+.lazyFloatRight {
+  float: right
+}
+
+.lazyFloatLeft {
+  float: left
+}
+
+.lazyTextLeft {
+  text-align: left
+}
+
+.lazyTextRight {
+  text-align: right
+}
+
+.lazyTextCenter {
+  text-align: Center
+}
+
+.lazyHalf {
+  width: 50%
+}
+
+.lazyFull {
+  width: 100%
+}
+
+.lazy80 {
+  width: 80%
+}
+
+.lazy70 {
+  width: 70%
+}
+
+.lazy30 {
+  width: 30%
+}
+
+.lazyFlex {
+  display: flex
+}
+
+.lazyMargin {
+  margin: 0 0 0 0.5rem;
+}
+
+.lazyPadding {
+  padding: 0.25rem;
+}
+
+.lazyAuto {
+  margin: auto
+}
+
+.lazyBoost {
+  margin-top: -1rem;
+}

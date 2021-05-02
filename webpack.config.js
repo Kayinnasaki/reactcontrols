@@ -1,0 +1,3 @@
+externals: {
+    appConfig:  "appConfigs"
+}

@@ -1,0 +1,150 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.overlayWaseda {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-image: url("./images/SBWaseda.png");
+	width: 1920px;
+	height: 1080px;
+	font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.wsbPlayer {
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: auto;
+	padding-bottom: auto;
+	position: absolute;
+	font-size: 16pt;
+	color: white;
+	vertical-align: bottom;
+	align-content: center;
+	width: 400px;
+}
+
+.wsbSelected {
+	font-weight: 800;
+	transform: scale(1.2, 1.2);
+	transition: transform 1s;
+}
+
+.wsbNeutral {
+	transform: scale(1.05, 1.05);
+	transition: transform 1s;
+}
+
+.wsbSmall {
+	transform: scale(1.00, 1.00);
+	transition: transform 1s;
+}
+
+.wsbTop {
+	top: -2px;
+}
+
+.wsbBottom {
+	top: 22px;
+}
+
+.wsbP1 {
+	text-align: right;
+	left: 510px;
+}
+
+.wsbP2 {
+	text-align: left;
+	right: 512px;
+}
+
+.wsbP1.wsbTop {
+	transform-origin: top right;
+}
+
+.wsbP1.wsbBottom {
+	transform-origin: bottom right;
+}
+
+.wsbP2.wsbTop {
+	transform-origin: top left;
+}
+
+.wsbP2.wsbBottom {
+	transform-origin: bottom left;
+}
+
+.wsbP1P {
+	position: absolute;
+	top: 10px;
+	left: 700px;
+	filter: drop-shadow(3px 5px 1px rgba(0, 0, 0, 0.5));
+}
+
+.wsbP2P {
+	position: absolute;
+	top: 10px;
+	right: 700px;
+	filter: drop-shadow(-3px 5px 1px rgba(0, 0, 0, 0.5));
+}
+
+.wsbPTop {
+	opacity: 1;
+	transform: translate(0px, -10px);
+	transition: transform 1s, opacity 1s;
+}
+
+.wsbPBottom {
+	opacity: 1;
+	transform: translate(0px, 10px);
+	transition: transform 1s, opacity 1s;
+}
+
+.wsbPNone {
+	opacity: 0;
+	transform: translate(0px, 0px);
+	transition: transform 1s, opacity 1s;
+}
+
+.wsbElim {
+	text-decoration: line-through;
+	opacity: 0.8;
+	font-weight: 400;
+	transform: scale(0.90, 0.90);
+	transition: transform 1s;
+}
+
+.wsbTeamP1 {
+	position: absolute;
+	font-size: 26pt;
+	font-weight: bold;
+	text-align: right;
+	left: 100px;
+	width: 600px;
+	height: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wsbTeamP2 {
+	position: absolute;
+	font-size: 26pt;
+	font-weight: bold;
+	text-align: left;
+	right: 100px;
+	width: 600px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.wsbSmallTitle {
+	font-size: 15pt;
+	white-space:normal;
+	overflow:visible;
+	text-overflow:unset;
+}

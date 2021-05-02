@@ -1,0 +1,45 @@
+.user {
+    text-align: center;
+    color: #bbbbbb;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 5px;
+    height: 2.2rem;
+    font-size: 1rem;
+    font-weight: 800;
+    vertical-align: middle;
+    line-height: 2rem;
+    background-color: var(--topbar);
+    margin-bottom: .5rem;
+}
+
+.userlist {
+    width: 9rem;
+    border-radius: var(--bord-curv);
+    background-color: var(--base-bk);
+    font-weight: 600;
+    filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+    margin: 1rem 0rem;
+    margin-right: 1rem
+}
+
+.ulcon {
+    float: right;
+    color: white;
+    background-color: var(--topbar-hover);
+    width: 1.2rem;
+    height: 2.2rem;
+}
+
+.last {
+    animation: 1s flash;
+}
+
+@keyframes flash {
+    0% {
+        background-color: var(--topbar-hover);
+    }
+    100% {
+        background-color: var(--topbar);
+    }
+}

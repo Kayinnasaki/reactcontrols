@@ -1,0 +1,166 @@
+.ttInput {
+    width: 8rem;
+    text-align: center;
+    font-size: 0.6rem;
+    height: 100%;
+    text-align: center;
+    font-weight: 800;
+    background-color: var(--input-bk);
+    color: var(--base-text);
+    border: none;
+    margin: 0 0.8rem 0 0;
+    padding: 0;
+}
+
+.ttLong {
+    width: 13rem;
+}
+
+.ttTop {
+    width: 48rem;
+    background-color: var(--input-bk);
+    margin: auto;
+    padding: auto;
+}
+
+.ttList {
+    width: 4rem;
+    background-color: var(--input-bk);
+}
+
+.ttTicker {
+    height: 2rem;
+    width: 2rem;
+}
+
+.ttTickerButton {
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+    background-color: var(--topbar);
+}
+
+.ttTickerButton:hover, .ttX:hover {
+    background-color: var(--topbar-hoverer)
+}
+
+.ttTeamName {
+    width: 13rem;
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: var(--input-bk);
+}
+
+.ttBase {
+    margin: auto;
+    padding: auto;
+    width: 48rem;
+}
+
+.ttTeam {
+    display: inline-flex;
+    background-color: var(--base-bk);
+    margin: 0.2rem 0 0.2rem 0;
+    border-radius: var(--bord-curv) 0 0 var(--bord-curv);
+    vertical-align: middle;
+    color: var(--base-text);
+    font-weight: 600;
+    width: 48rem;
+    height: 2rem;
+}
+
+.ttSide {
+    float: left;
+    height: 2rem;
+    ;
+    width: 2rem;
+    background-color: var(--topbar);
+    border-radius: var(--bord-curv) 0 0 var(--bord-curv);
+    line-height: 1.8;
+}
+
+input.ttInput::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+.ttIndex {
+    text-align: left;
+    margin: 0 0 0.5rem 0;
+    padding: 0 0 0.3rem 0;
+}
+
+.ttX {
+    float: right;
+    height: 1.8rem;
+    width: 1.8rem;
+    margin: auto;
+    vertical-align: middle;
+    line-height: 2rem;
+    border-radius: 0.25rem;
+    background-color: var(--topbar);
+}
+
+.ttFooter {
+    display: inline-flex;
+    background-color: var(--topbar);
+    margin: 0.2rem 0 0.2rem 0;
+    border-radius: 0 0 var(--bord-curv) var(--bord-curv);
+    vertical-align: middle;
+    color: var(--base-text);
+    font-weight: 600;
+    width: 48rem;
+    height: 3rem;
+}
+
+.ttFooterButton {
+    background-color: var(--topbar-hover);
+    border-radius: var(--bord-curv);
+    height: 2.2rem;
+    width: 5.5rem;
+    padding: 0.2rem;
+    margin: auto 0.5rem auto 0.5rem;
+    vertical-align: middle;
+    color: white;
+    border: none;
+}
+
+.ttFooterAdd {
+    width: 100%;
+}
+
+.ttFooterButton:hover {
+    background-color: var(--topbar-hoverer);
+}
+
+.ttMoveDown {
+    animation-name: ttDown;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+}
+
+.ttMoveUp {
+    animation-name: ttUp;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+}
+
+@keyframes ttUp {
+    0% {
+        transform: translate(0, -2.5rem);
+    }
+    50% {
+        transform: translate(0.5rem, -1.25rem);
+    }
+    100% {
+        transform: translate(0, 0rem);
+    }
+}
+
+@keyframes ttDown {
+    from {
+        transform: translate(0, 2.5rem);
+    }
+    to {
+        transform: translate(0, 0rem);
+    }
+}

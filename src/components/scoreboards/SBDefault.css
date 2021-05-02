@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.overlayDefault {
+	position: absolute;	
+	left: 0px;
+	top: 0px;
+	background-image: url("./images/SBDefault.png");
+	width:1920px;
+	height:1080px;
+}
+
+.p1name {
+	position: absolute;
+	font-size: 26pt;
+	color: white;
+	left: 200px;
+	top: 0px;
+	width: 600px;
+	text-align: right;
+}
+
+.p2name {
+	position: absolute;
+	font-size: 26pt;
+	color: white;
+	right: 200px;
+	top: -4px;
+	width: 600px;
+	text-align: left;
+
+}
+
+.p1name {
+	position: absolute;
+	font-size: 26pt;
+	color: white;
+	left: 200px;
+	top: -4px;
+	width: 600px;
+	text-align: right;
+
+}
+
+.p1score {
+	position: absolute;
+	font-size: 32pt;
+	font-weight: bold;
+	color: white;
+	left: 806px;
+	top: -7px;
+	width: 60px;
+	text-align: center;
+
+}
+
+.p2score {
+	position: absolute;
+	font-size: 32pt;
+	font-weight: bold;
+	color: white;
+	right: 810px;
+	top: -7px;
+	width: 60px;
+	text-align: center;
+
+}
+
+.title {
+	position: absolute;
+	font-size: 18pt;
+	color: white;
+	left: 880px;
+	top: -4px;
+	width: 155px;
+	height: 50px;
+	text-align: center;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+
+}
+
+#title {
+	text-align: center;
+	width: 155px;
+}

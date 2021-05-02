@@ -1,0 +1,483 @@
+body {
+	margin: 0;
+	padding: 0;
+	/* Hide scrollbars */
+}
+
+.overlayWBig {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-image: url("./images/SBWBigBack.png");
+	width: 1920px;
+	height: 1080px;
+	font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.SBWBigTeam {
+	position: absolute;
+	top: 70px;
+	width: 970px;
+	height: 120px;
+	z-index: 70;
+}
+
+.SBWBigTeam.P1 {
+	animation-name: p1team;
+	animation-duration: 4s;
+	left: 0px;
+	background-image: url("./images/SBWBigTeamP1.png");
+	animation-timing-function: linear;
+	animation-name: p1anim;
+	animation-duration: 0.8s;
+}
+
+.WBigSmallTitle {
+	font-size: 2rem !important;
+}
+
+@keyframes p1anim {
+	from {
+		transform: translate(-2000px, 0px)
+	}
+	to {
+		transform: translate(0px, 0px)
+	}
+}
+
+@keyframes p2anim {
+	from {
+		transform: translate(2000px, 0px)
+	}
+	to {
+		transform: translate(0px, 0px)
+	}
+}
+
+@keyframes p1anim2 {
+	from {
+		transform: translate(-3000px, 0px)
+	}
+	to {
+		transform: translate(0px, 0px)
+	}
+}
+
+@keyframes p2anim2 {
+	from {
+		transform: translate(3000px, 0px)
+	}
+	to {
+		transform: translate(0px, 0px)
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+.SBWBigTeam.P2 {
+	right: 0px;
+	background-image: url("./images/SBWBigTeamP2.png");
+	animation-timing-function: linear;
+	animation-name: p2anim;
+	animation-duration: 0.8s;
+}
+
+.SBWBigTeamName {
+	position: relative;
+	top: 12px;
+	font-size: 4.5rem;
+	font-weight: bold;
+}
+
+.SBWBigTeamName.P1 {
+	left: 60px;
+	text-align: left;
+}
+
+.SBWBigTeamName.P2 {
+	right: 60px;
+	text-align: right;
+}
+
+.SBWBigPlayers {
+	position: absolute;
+	top: 310px;
+	width: 597px;
+	height: 132px;
+	z-index: 70;
+}
+
+.SBWBigPlayers.P1 {
+	left: 250px;
+	background-image: url("./images/SBWBigPlayersP1.png");
+	animation-name: p1anim2;
+	animation-duration: 2s;
+}
+
+.SBWBigPlayers.P2 {
+	right: 250px;
+	background-image: url("./images/SBWBigPlayersP2.png");
+	animation-name: p2anim2;
+	animation-duration: 2s;
+}
+
+.SBWBigPlayer {
+	font-size: 3.5rem;
+	width: 590px;
+	height: 56px;
+	margin-bottom: 8px;
+}
+
+.SBWBigPlayer.P1 {
+	text-align: right;
+}
+
+.SBWBigPlayer.P2 {
+	text-align: left;
+}
+
+.deselected {
+	filter: brightness(0.6);
+	animation-name: playerOut;
+	animation-duration: 1s;
+}
+
+.selected {
+	font-weight: bolder;
+	filter: brightness(1);
+	animation-name: playerIn;
+	animation-duration: 1s;
+}
+
+.none {
+	filter: brightness(0.8)
+}
+
+@keyframes playerIn {
+	from {
+		filter: brightness(0.6)
+	}
+	to {
+		filter: brightness(1)
+	}
+}
+
+@keyframes playerOut {
+	from {
+		filter: brightness(1)
+	}
+	to {
+		filter: brightness(0.6)
+	}
+}
+
+.SBWBigIcon {
+	margin: 1px 3px 0px 3px;
+	height: 58px;
+	width: 58px;
+	filter: brightness(1)
+}
+
+.iconappear{
+	transform-origin: center;
+	animation-name: icon;
+	animation-duration: 1s;
+	transform: scale(1);
+}
+
+@keyframes icon {
+	from {
+		transform: scale(3);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.SBWBigIcon.P1 {
+	margin-left: 12px;
+	float: right;
+}
+
+.SBWBigIcon.P2 {
+	margin-left: 9px;
+	margin-right: 12px;
+	float: left;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.SBWBigVs {
+	position: absolute;
+	top: 280px;
+	left: 850px;
+	width: 226px;
+	height: 228px;
+	background-image: url("./images/SBWBigVs.png");
+	animation-name: fadein;
+	animation-duration: 3s;
+	animation-delay: 1s;
+	opacity: 0;
+	animation-fill-mode: forwards;
+	z-index: 70;
+}
+
+.overlayGrad {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-image: url("./images/SBWBigGradiant.png");
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	padding: 0;
+	z-index: 80;
+}
+
+.transition {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	animation-name: fadein;
+	animation-duration: 0.6s;
+	opacity: 0;
+	animation-fill-mode: forwards;
+	animation-direction: reverse;
+	z-index: 90;
+}
+
+.character {
+	position: absolute;
+	height: 1280px;
+	width: 1129px;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0;
+}
+
+.character.top {
+	top: 100px;
+	z-index: 10;
+}
+
+.character.p1.top {
+	left: -400px;
+	animation-name: p1Char;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+.character.bottom {
+	top: 300px;
+	z-index: 10;
+}
+
+.character.p1.bottom {
+	left: 0;
+	animation-name: p1Char;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+.character.p2.top {
+	right: -400px;
+	animation-name: p2Char;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+.character.p2.bottom {
+	right: 0;
+	animation-name: p2Char;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+.destroyed {
+	filter: grayscale(90%) brightness(0.5) blur(3px);
+	animation-name: destroy;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes destroy {
+	from {
+		filter: grayscale(0%) brightness(1) blur(0px);
+	}
+	to {
+		filter: grayscale(100%) brightness(0.5) blur(5px);
+	}
+}
+
+@keyframes p1Char {
+	from {
+		transform: translate(-2000px, 0px);
+		opacity: 1
+	}
+	to {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+
+@keyframes p2Char {
+	from {
+		transform: translate(2000px, 0px);
+		opacity: 1
+	}
+	to {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+
+/* Character Graphics */
+.answer {
+	background-image: url("./images/chars/answer.png");
+	background-position-x: 80%;
+	background-position-y: 30px
+}
+
+.axl {
+	background-image: url("./images/chars/axl.png");
+	background-position-y: 100px
+}
+
+.baiken {
+	background-image: url("./images/chars/baiken.png");
+}
+
+.bed {
+	background-image: url("./images/chars/bed.png");
+}
+
+.chipp {
+	background-image: url("./images/chars/chipp.png");
+	background-position-x: 0%;
+	background-size: 60%
+}
+
+.dizzy {
+	background-image: url("./images/chars/dizzy.png");
+	background-size: 90%;
+}
+
+.elphelt {
+	background-image: url("./images/chars/elphelt.png");
+}
+
+.ino {
+	background-image: url("./images/chars/ino.png");
+	background-position-x: 60%;
+	background-size: 90%
+}
+
+.jacko {
+	background-image: url("./images/chars/jacko.png");
+}
+
+.jam {
+	background-image: url("./images/chars/jam.png");
+}
+
+.ky {
+	background-image: url("./images/chars/ky.png");
+	background-position-x: 140px;
+}
+
+.leo {
+	background-image: url("./images/chars/leo.png");
+	background-size: 100%;
+	background-position: 50px 0px
+}
+
+.may {
+	background-image: url("./images/chars/may.png");
+	background-position-y: 0px
+}
+
+.millia {
+	background-image: url("./images/chars/millia.png");
+}
+
+.pot {
+	background-image: url("./images/chars/pot.png");
+	background-position-y: 40px
+}
+
+.ram {
+	background-image: url("./images/chars/ram.png");
+	background-size: 100%
+}
+
+.raven {
+	background-image: url("./images/chars/raven.png");
+}
+
+.sin {
+	background-image: url("./images/chars/sin.png");
+}
+
+.slayer {
+	background-image: url("./images/chars/slayer.png");
+	background-position: 40% 0px;
+	background-size: 90%;
+}
+
+.sol {
+	background-image: url("./images/chars/sol.png");
+	background-position: 40% 0px;
+	background-size: 90%;
+}
+
+.venom {
+	background-image: url("./images/chars/venom.png");
+	background-position-x: 90px;
+	background-size: 75%
+}
+
+.zato {
+	background-image: url("./images/chars/zato.png");
+}
+
+/* Character side specific tweaks */
+
+.chipp.p1 {
+	background-position-x: 150px;
+}
+
+.ino.p1 {
+	background-position-x: 180px;
+}
+
+.jacko.p1 {
+	background-position-x: 40px;
+}
+
+.pot.p2 {
+	background-position-x: -50px;
+}

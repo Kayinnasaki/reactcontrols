@@ -1,13 +1,315 @@
+:root {
+  --base-bk: #2c2c33;
+  --base-text: #ebebeb;
+  --accent-text: #eaeaea;
+  --accent-bk: rgba(0, 0, 0, .25);
+  --input-bk: #212126;
+  --topbar: #4a1010;
+  --topbar-hover: #821a1a;
+  --topbar-hoverer: #be2121;
+  --dark-button: #45454c;
+  --dark-button-hover: #3a3a41;
+  --bord-curv: 0.5rem;
+  --red-input: #2d1414;
+}
+
+html {
+  overflow-y: scroll;
+}
+
 body {
+  background-color: #121212;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  color: var(--base-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  margin-top: 0rem;
+}
+
+.App {
+  justify-content: center;
+  text-align: center;
+  margin-top: 0rem;
+}
+
+.nav a {
+  font-weight: 600;
+  color: var(--base-text);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #DDDDDD;
+}
+
+.nav {
+  font-size: 1.5rem;
+  background-color: var(--topbar);
+  height: 2.2rem;
+  filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+}
+
+.current {
+  color: white;
+  box-sizing: border-box;
+  border-bottom: 4px solid var(--topbar-hover);
+}
+
+.Workboard {
+  background-color: var(--base-bk);
+  margin: 1rem;
+  width: 38rem;
+  height: 17.75rem;
+  border-radius: var(--bord-curv);
+  vertical-align: middle;
+  color: var(--base-text);
+  font-weight: 600;
+  filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+}
+
+.wbFlex {
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wbPlayer {
+  width: 50%;
+  margin: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.wbPlayerlist {
+  width: 14rem;
+  height: 1.8rem;
+  text-align: center;
+  font-weight: 800;
+  background-color: var(--input-bk);
+  color: var(--base-text);
+  border: none;
+  border-radius: var(--bord-curv);
+}
+
+.wbTeamlist {
+  width: 14rem !important;
+  height: 1.8rem;
+  text-align: center;
+  font-weight: 800;
+  background-color: var(--input-bk);
+  color: var(--base-text);
+  border: none;
+  border-radius: var(--bord-curv);
+  border-bottom: 0px !important
+}
+
+.wbTeamitem {
+  background-color: var(--input-bk) !important;
+  color: #ffffff;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 10px;
+  font-size: 0.8rem;
+  padding: 6px !important;
+  border-bottom: 0px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wbTeam {
+  margin-top:0.5rem;
+}
+
+.plshort {
+  width: 12rem;
+  margin-bottom: 0.5rem;
+}
+
+.wbFooter {
+  background-color: var(--topbar);
+  height: 5.5rem;
+  border-radius: 0 0 var(--bord-curv) var(--bord-curv);
+  margin-top: 0.7rem;
+  position: absolute;
+  margin-bottom: 0;
+  width: 100%;
+  bottom: 0px;
+  margin: auto;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.darkButton {
+  background-color: var(--dark-button);
+  vertical-align: middle;
+  color: white;
+  border: none;
+}
+
+.darkButton:hover {
+  background-color: var(--dark-button-hover);
+}
+
+.red {
+  background-color: var(--topbar);
+}
+
+.roundButton {
+  width: 3rem;
+  height: 1.8rem;
+  margin: 0.3rem;
+  border-radius: 0.9rem;
+  font-size: 1.4rem;
+  padding-top: 0.2rem;
+}
+
+.midButton {
+  height: 1.9rem;
+  width: 8rem;
+  border-radius: var(--bord-curv);
+  margin: 0.1rem;
+}
+
+.top {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.bottom {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.wbInput {
+  background-color: var(--input-bk);
+  color: var(--base-text);
+  border-width: 0px;
+  border: none;
+  border-radius: 5px;
+  /*filter: drop-shadow(0px 3px 2px #000000);*/
+  margin: 2px;
+}
+
+.wswrapper {
+  position: relative;
+  width: 55rem;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  z-index: 2;
+}
+
+.titleInput {
+  width: 8rem;
+  height: 1.5rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.idleStatus {
+  position: absolute;
+  font-size: 0.6rem;
+  line-height: 0.5rem;
+  left: 2.4rem;
+  bottom: 0.3rem;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.radioBox {
+  vertical-align: top;
+  margin-top: 0.5rem;
+  height: 2rem;
+}
+
+.light {
+  color: black;
+  background-color: #dcdcdc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10pt;
+}
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.p1check {
+  float: right;
+}
+
+.p2check {
+  float: Left;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: initial;
+  appearance: initial;
+  background: gray;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  position: relative;
+}
+
+.underboard {
+  width: 48rem;
+  margin: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked {
+  background: red;
+}
+
+input[type="checkbox"]:checked:after {
+  /* Heres your symbol replacement */
+  content: "X";
+  color: #fff;
+  /* The following positions my tick in the center, 
+   * but you could just overlay the entire box
+   * with a full after element with a background if you want to */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /*
+   * If you want to fully change the check appearance, use the following:
+   * content: " ";
+   * width: 100%;
+   * height: 100%;
+   * background: blue;
+   * top: 0;
+   * left: 0;
+   */
 }

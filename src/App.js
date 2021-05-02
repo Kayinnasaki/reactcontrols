@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import ViewHome from './components/ViewHome'
+import ViewBoard from './components/ViewBoard'
+import ViewControls from './components/ViewControls'
+// CSS, split up only for my own sanity
+import './index.css'
+import './css/Collapsible.css'
+import './css/Footer.css'
+import './css/Lazy.css'
+import './css/Scoreboard.css'
+import './css/Scoreticker.css'
+import './css/Tools.css'
+import './css/Userlist.css'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+
+          <Route exact path="/">
+            <ViewHome />
+          </Route>
+
+          <Route path="/controls/:sbidParam?">
+            <ViewControls type="controls" />
+          </Route>
+
+          <Route path="/waseda/:sbidParam?">
+            <ViewControls type="waseda"/>
+          </Route>
+          
+          <Route path="/board/:boardParam/:sbidParam?">
+            <ViewBoard/>
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.Collapsible {
+    margin: auto;
+    padding: auto;
+    filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+}
+
+.Collapsible__trigger {
+    width: 100%;
+    height: 2rem;
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+    color: #333333;
+    position: relative;
+    border-radius: var(--bord-curv);
+    background-color: var(--topbar);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.CollapsibleInner {
+    filter: drop-shadow(0rem 0.0rem 0rem #000000);
+    border-radius: 0;
+}
+
+span.CollapsibleInner {
+    background-color: var(--base-bk);
+    border-radius: 0;
+    box-shadow: inset 0 0 1px #000000;
+}
+
+span.CollapsibleInner:hover {
+    background-color: var(--dark-button-hover);
+}
+
+.is-open {
+    border-radius: var(--bord-curv) var(--bord-curv) 0 0;
+}
+
+.is-open.CollapsibleInner {
+    filter: drop-shadow(0rem 0.0rem 0rem #000000);
+    background-color: var(--dark-button);
+}
+
+textarea.CollapsibleInner {
+    width: 100%;
+    height: 20rem;
+}

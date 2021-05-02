@@ -1,0 +1,30 @@
+.stNumber {
+    width: 7.5rem; 
+    height: 5rem;
+
+    margin: 0px;
+    padding: 0;
+
+    font-size: 5rem;
+    text-align: center;
+    border-radius: 0;
+  }
+  
+.stTab {
+    display:inline-block;
+    background-color: var(--topbar);
+    width: 7.5rem;
+    text-align: center;
+
+    margin: 0px;
+    padding: 0px;
+  }
+  
+.stTab:hover {
+    background-color: var(--topbar-hover);
+}
+
+.stBox {
+    text-align: center;
+    width: 35%;
+}
