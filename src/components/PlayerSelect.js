@@ -15,9 +15,9 @@ const PlayerSelect = ({ board, side, set, players }) => {
     function PlayerChange(data) {
         set({
             [pname]: data.label,
-            [char]: data.top || "",
-            [rank]: data.bottom || "",
-            [bio]: data.topchar || "",
+            [char]: data.char || "",
+            [rank]: data.rank || "",
+            [bio]: data.bio || "",
         })
     }
 

@@ -19,9 +19,11 @@ import WBPanel from './WBPanel'
 import WBWaseda from './WBWaseda'
 import ToolsWaseda from './ToolsWaseda'
 import ToolsPlayer from './ToolsPlayer'
+import ToolsQuick from './ToolsQuick'
 
 const appConfig = window.appConfig
 const ws = new W3CWebSocket(appConfig.controlws)
+
 let initialload = 1;
 console.log("intial state: " + initialload)
 
@@ -36,6 +38,8 @@ function getUniqueID() {
 }
 
 const WS = ({ type }) => {
+
+
   let history = useHistory()
   const { sbidParam } = useParams()
 
@@ -69,6 +73,7 @@ const WS = ({ type }) => {
 
   const [players, playersSet] = useState(JSON.parse(localStorage.getItem('players')) || window.appPlayers || [] )
   const [waseda, wasedaSet] = useState(JSON.parse(localStorage.getItem('waseda')) || window.appTeams || [] )
+  const [quick, quickSet] = useState(JSON.parse(localStorage.getItem('quick')) || window.appQuick || [] )
 
   const [uldata, uldataSet] = useLegacyState({
     userlist: [],
@@ -137,8 +142,14 @@ const WS = ({ type }) => {
   const clear = () => {
     let temp = {}
     temp.p1name = ""
+    temp.p1char = ""
+    temp.p1rank = ""
+    temp.p1bio = ""
     temp.p1score = 0
     temp.p2name = ""
+    temp.p2char = ""
+    temp.p2rank = ""
+    temp.p2bio = ""
     temp.p2score = 0
     console.log("Clearing")
     workboardSet(temp)
@@ -164,7 +175,8 @@ const WS = ({ type }) => {
     console.log("push")
     let datalists = {
       "playerlist": players,
-      "wasedalist": waseda
+      "wasedalist": waseda,
+      "quicklist": quick
     }
 
     const meta_data = {
@@ -202,6 +214,7 @@ const WS = ({ type }) => {
     if (data.meta.type == "update" || data.meta.type == "ulist" || data.meta.type == "intro") {
       console.log("Scoreboard Data:" + JSON.stringify(data.main, null, "\t"))
       scoreboardSet(data.main)
+      if (idle == true) workboardSet(data.main)
       uldataSet({
         userlist: data.meta.userlist,
         last: data.meta.last
@@ -214,11 +227,6 @@ const WS = ({ type }) => {
         initialload = 0
         console.log("intial state: " + initialload)
 
-      }
-
-      if (idle == true) {
-        console.log('Auto Updating')
-        refresh()
       }
     }
 
@@ -238,12 +246,13 @@ const WS = ({ type }) => {
   function dlUpdate(dl) {
     if (dl.playerlist != undefined) playersSet(dl.playerlist)
     if (dl.wasedalist != undefined) wasedaSet(dl.wasedalist)
+    if (dl.quicklist != undefined) quickSet(dl.quicklist)
   }
 
   function challongeRequest(cid, tid) {
     let id = ""
 
-    if (cid !== "") { id = cid + "-" }
+    if (cid !== "") id = cid + "-"
     id = id + tid
 
     console.log("Requesting Challonge List: " + id)
@@ -336,7 +345,8 @@ const WS = ({ type }) => {
             <ToolsWaseda teams={waseda} set={wasedaSet} dataPush={dataPush} /><br />
           </Route>
           <Route path="/controls/:sbidParam?">
-            <ToolsPlayer players={players} set={playersSet} dataPush={dataPush} challongeRequest={challongeRequest} smashGGRequest={smashGGRequest} /><br />
+            <ToolsPlayer players={players} set={playersSet} dataPush={dataPush} challongeRequest={challongeRequest} smashGGRequest={smashGGRequest} />
+            <ToolsQuick players={players} quick={quick} set={quickSet} dataPush={dataPush} workboardSet={workboardSet} submit={submit}/><br />
           </Route>
         </Switch>
       </div>

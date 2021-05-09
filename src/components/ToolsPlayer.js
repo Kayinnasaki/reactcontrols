@@ -1,12 +1,13 @@
 import DataDisplay from './DataDisplay'
+import DataTool from './DataTool'
 import DataToolSimple from './DataToolSimple'
 import Collapsible from 'react-collapsible';
 import { useState } from 'react'
 
 const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest }) => {
-    const [ctid, ctidSet] = useState( localStorage.getItem("ctid") ||"") 
-    const [ccid, ccidSet] = useState( localStorage.getItem("ccid") ||"") 
-    const [sggid, sggidSet] = useState( localStorage.getItem("sggid") ||"") 
+    const [ctid, ctidSet] = useState(localStorage.getItem("ctid") || "")
+    const [ccid, ccidSet] = useState(localStorage.getItem("ccid") || "")
+    const [sggid, sggidSet] = useState(localStorage.getItem("sggid") || "")
 
     const save = (name, data) => {
         localStorage.setItem(name, data)
@@ -23,6 +24,7 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
                     <div className="flex">
                         <div className="lazyHalf">
                             <DataToolSimple data={players} set={set} open={true} style="CollapsibleInner" />
+                  
                             <Collapsible trigger="Challonge Tool" className="CollapsibleInner" openedClassName="CollapsibleInner" triggerClassName="CollapsibleInner" triggerOpenedClassName="CollapsibleInner">
                                 <div className="flex lazyPadding">
                                     <div className="lazy70 lazyAuto">
@@ -32,8 +34,8 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
                                     <div className="lazy30 lazyAuto lazyPadding">
                                         <button type="button" className="lazyFull" onClick={() => challongeRequest(ccid, ctid)}>Pull Down List</button><br />
                                         <button type="button" className="lazyFull" onClick={() => {
-                                            save("ctid", ctid) 
-                                            save("ccid", ccid) 
+                                            save("ctid", ctid)
+                                            save("ccid", ccid)
                                         }}>Save</button><br />
                                         <button type="button" className="lazyFull" onClick={() => {
                                             load("ctid", ctidSet)
@@ -45,7 +47,7 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
                             <Collapsible trigger="SmashGG Tool" className="CollapsibleInner" openedClassName="CollapsibleInner" triggerClassName="CollapsibleInner" triggerOpenedClassName="CollapsibleInner">
                                 <div>
                                     <div className="lazyPadding">
-                                Tournament URL: <input type="text" className="lazyFull " value={sggid} onChange={e => sggidSet(e.target.value)} /> <br />
+                                        Tournament URL: <input type="text" className="lazyFull " value={sggid} onChange={e => sggidSet(e.target.value)} /> <br />
                                     </div>
                                     <button type="button" onClick={() => smashGGRequest(sggid)}>Pull Down List</button>
                                     <button type="button" onClick={() => save("sggid", sggid)}>Save</button>
@@ -62,20 +64,21 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
 
                                 <strong>Simple List</strong> Allows you to input players in a simple manner. Be warned that loading players this way will strip metadata out of any existing player list.<br /><br />
 
+                                <strong>Raw List</strong> JSON style player list that allows for the insertion of more data.<br /><br />
+
                         The <strong>Challonge</strong> and <strong>SmashGG</strong> tools lets you pull player lists from online tournaments. Each of these can have values saved for later use.<br /><br />
 
                                 <strong>Save Data</strong> and <strong>Load Data</strong> save the current scoreboard to local storage so it may be reloaded
                         at another time. <strong>Push to Server</strong> sends this data to anyone else using this scoreboard.<br /><br />
                             </div>
+
                         </div>
                     </div>
-
+                    <DataTool data={players} set={set} style="CollapsibleInner" />
                     <div>
                         <hr /><pre className="bold ttIndex">   [ID]            [Player]              [Char]        [Ranking]                   [Bio]</pre></div>
                 </div>
-
-                <DataDisplay data={players} set={set} type="players" dataPush={dataPush}/>
-
+                <DataDisplay data={players} set={set} type="players" dataPush={dataPush} />
             </div>
         </Collapsible>
     )

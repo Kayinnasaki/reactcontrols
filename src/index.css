@@ -13,10 +13,6 @@
   --red-input: #2d1414;
 }
 
-html {
-  overflow-y: scroll;
-}
-
 body {
   background-color: #121212;
   margin: 0;
@@ -279,6 +275,7 @@ input[type="checkbox"] {
 .underboard {
   width: 48rem;
   margin: auto;
+  filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
 }
 
 .bold {

@@ -1,7 +1,7 @@
 .Collapsible {
     margin: auto;
     padding: auto;
-    filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
+    margin-bottom: 0.1rem;
 }
 
 .Collapsible__trigger {

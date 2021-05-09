@@ -46,7 +46,7 @@ const Player = ({ player, players, set, index, motion, motionSet }) => {
         <div className="ttTickerButton" onClick={() => moveTeam(1)}><GoTriangleDown /></div>
       </div>
       <div><input className="ttInput ttTeamName" value={player.label} onChange={e => { handleChange(e, "label") }} /></div>
-      <input list="chars" onClick={e => e.target.value = ""} className="ttInput ttList" value={player.topchar} onChange={e => { handleChange(e, "topchar") }} />
+      <input list="chars" onClick={e => e.target.value = ""} className="ttInput ttList" value={player.char} onChange={e => { handleChange(e, "char") }} />
 
       <input className="ttInput titleInput" value={player.rank} onChange={e => { handleChange(e, "rank") }} />
       <input className="ttInput titleInput ttLong" value={player.bio} onChange={e => { handleChange(e, "bio") }} />

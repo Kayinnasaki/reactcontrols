@@ -164,3 +164,15 @@ input.ttInput::-webkit-calendar-picker-indicator {
         transform: translate(0, 0rem);
     }
 }
+
+.ttquicklist {
+    width: 11rem !important;
+    height: 1.8rem;
+    text-align: center;
+    font-weight: 800;
+    background-color: var(--input-bk);
+    color: var(--base-text);
+    border: none;
+    margin-right: 1rem;
+    border-bottom: 0px !important
+  }

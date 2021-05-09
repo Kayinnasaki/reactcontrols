@@ -101,3 +101,18 @@ var appTeams = [{
     bottomchar: "dizzy"
   },
 ];
+
+var appQuick = [{
+  label: "1", key: "0",
+  p1name: "test",
+  p2name: "test2",
+  title: "Syd",
+},
+{
+  label: "2", key: "1",
+  p1name: "test3",
+  p2name: "test24",
+  title: "Sydr",
+}
+];
+

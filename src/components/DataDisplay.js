@@ -3,10 +3,11 @@ import { useState } from 'react'
 import { v4 as uuid } from 'uuid';
 import isJson from 'is-valid-json'
 import cloneDeep from 'clone-deep'
-import Player from './Player'
-import Team from './Team'
+import Player from './EntryTypes/Player'
+import Team from './EntryTypes/Team'
+import Quick from './EntryTypes/Quick'
 
-const DataDisplay = ({data, set, type, dataPush}) => {
+const DataDisplay = ({data, set, extra, type, dataPush}) => {
     const [motion, motionSet] = useState([-1, -1])
     
     const sort = () => {
@@ -28,7 +29,7 @@ const DataDisplay = ({data, set, type, dataPush}) => {
         })
         set(dataClone)
     }
-
+    
     const save = () => {
         localStorage.setItem(type, JSON.stringify(data))
     }
@@ -44,6 +45,8 @@ const DataDisplay = ({data, set, type, dataPush}) => {
         switch (type) {
             case 'waseda':
                 return <Team team={entry} teams={data} index={index} set={set} motion={motion} motionSet={motionSet} />
+            case 'quick':
+                return <Quick quick={entry} quicklists={data} players={extra} index={index} set={set} motion={motion} motionSet={motionSet}/>
             default:
                 return <Player player={entry} players={data} index={index} set={set} motion={motion} motionSet={motionSet} />
         }
