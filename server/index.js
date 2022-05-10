@@ -1,4 +1,5 @@
 const schema = require('./schema.json');
+const nodeCleanup = require('node-cleanup');
 const Ajv = require("ajv");
 const ajv = new Ajv({ allowUnionTypes: true });
 const validate = ajv.compile(schema);
@@ -14,6 +15,7 @@ let wss2 = [];
 
 const https = require('https');
 const { configure } = require('@testing-library/dom');
+const { toUnicode } = require('punycode');
 
 if (config.privateKey !== "") {
     console.log("Has Certs: Starting with WSS")
@@ -39,19 +41,44 @@ if (config.privateKey !== "") {
     });
 } else {
     console.log("No Certs: Starting with WS")
-
     wss = new WebSocket.Server({ port: config.controlport }); // For Control Boards
     wss2 = new WebSocket.Server({ port: config.listenport }); // For Score Displays
 }
 
+// Setting Time for file saving comparisons in unix time
+let timeLast = Math.floor(+new Date() / 1000)
+console.log("Current Unix Time: " + timeLast)
 
 // Default Info
 let scoreboard = {};
+
+if (fs.existsSync(config.database)) {
+      console.log("Loading Existing File");
+      scoreboard = JSON.parse(fs.readFileSync(config.database));
+}
+
+
+
+console.log(JSON.stringify(scoreboard, null, 2))
+
 sbCheck("default");
 let lastclient = "";
 
 //Challonge API Info
 const apikey = config.apikey;
+
+let saveChange = 0
+setInterval(function () {
+    const timeCurrent = Math.floor(+new Date() / 1000)
+    const timeStamp = new Date( timeCurrent * 1000);
+    console.log('Checkin at ' + timeStamp.toLocaleString('en-US', { timeZone: 'America/New_York',}));
+
+    if (saveChange == 1)
+    {
+        console.log('Saving New changes')
+        savetodisk()
+    }
+ }, config.checkintimer * 1000); 
 
 // For Controller Connections
 wss.on("connection", ws => {
@@ -69,14 +96,6 @@ wss.on("connection", ws => {
             ws.close();
             return;
         }
-
-        // const valid = validate(dataj)
-        // if (!valid) {
-        //     console.log(validate.errors)
-        //     console.log("Client Sent Invalid JSON Data. Terminating Connection");
-        //     ws.close();
-        //     return;
-        // }
 
         const sbidold = ws.sbid;
         const sbid = dataj.meta.sbid;
@@ -213,6 +232,8 @@ wss.on("connection", ws => {
                 console.log("Error: " + err.message);
             });
         }
+        // Checks if On Disc copy is old
+        checkStale()
     });
 
     ws.on("close", () => {
@@ -337,3 +358,30 @@ function clientlist(sbid) {
 
     return clist;
 };
+
+function savetodisk()
+{
+    saveChange = 0
+    const dbsave = JSON.stringify(scoreboard, null, 2)
+    fs.writeFileSync(config.database, dbsave)
+    console.log("Saving Boards to Disc")
+}
+
+function checkStale(){
+    saveChange = 1
+    const timeCurrent = Math.floor(+new Date() / 1000)
+    const timeStamp = new Date( timeCurrent * 1000);
+
+    console.log( timeStamp.toLocaleString('en-US', { timeZone: 'America/New_York',}))
+    if (timeCurrent - config.updatetimer >= timeLast) {
+        console.log("Over " + config.updatetime + " since last save")
+        timeLast = timeCurrent
+        savetodisk()
+    }
+}
+
+nodeCleanup((exitCode, signal) => {
+    savetodisk()
+    console.log("Exiting");
+
+})

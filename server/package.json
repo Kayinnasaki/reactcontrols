@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^8.0.1",
+    "node-cleanup": "^2.1.2",
     "ws": "^7.4.4"
   }
 }
