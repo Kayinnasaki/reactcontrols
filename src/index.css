@@ -32,6 +32,18 @@ h1 {
   margin-top: 0rem;
 }
 
+.homeMain {
+  font-size: 1.1rem;
+  width: 55rem;
+  margin:auto;
+}
+
+.home a {
+  font-weight: 1000;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
 .nav a {
   font-weight: 600;
   color: var(--base-text);
@@ -135,6 +147,12 @@ h1 {
   margin-bottom: 0;
   width: 100%;
   bottom: 0px;
+  margin: auto;
+}
+
+.list {
+  width:50.0rem;
+  text-align: left;
   margin: auto;
 }
 

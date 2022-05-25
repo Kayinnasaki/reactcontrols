@@ -44,7 +44,7 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
                                     </div>
                                 </div>
                             </Collapsible>
-                            <Collapsible trigger="SmashGG Tool" className="CollapsibleInner" openedClassName="CollapsibleInner" triggerClassName="CollapsibleInner" triggerOpenedClassName="CollapsibleInner">
+                            <Collapsible trigger="StartGG Tool" className="CollapsibleInner" openedClassName="CollapsibleInner" triggerClassName="CollapsibleInner" triggerOpenedClassName="CollapsibleInner">
                                 <div>
                                     <div className="lazyPadding">
                                         Tournament URL: <input type="text" className="lazyFull " value={sggid} onChange={e => sggidSet(e.target.value)} /> <br />
