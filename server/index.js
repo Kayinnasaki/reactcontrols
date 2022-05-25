@@ -196,6 +196,7 @@ wss.on("connection", ws => {
             const end = "?expand[]=entrants"
 
             tournid = tournid.replace("https://", "");
+            tournid = tournid.replace("www.", "");
             tournid = tournid.replace("/overview", "");
 
             const url = start + tournid + end;
