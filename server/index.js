@@ -155,7 +155,14 @@ wss.on("connection", ws => {
             //commid + "-" +
             const url = "https://api.challonge.com/v1/tournaments/" + tournid + "/participants.json?api_key=" + apikey;
             console.log(url);
-            https.get(url, (resp) => {
+
+            const options = {
+                headers: {
+                    'User-Agent': 'Warmrock Scoreboard',
+                }
+            };
+
+            https.get(url, options, (resp) => {
                 let data = '';
 
                 // A chunk of data has been received.
