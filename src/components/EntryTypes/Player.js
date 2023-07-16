@@ -48,8 +48,8 @@ const Player = ({ player, players, set, index, motion, motionSet }) => {
       <div><input className="ttInput ttTeamName" value={player.label} onChange={e => { handleChange(e, "label") }} /></div>
       <input list="chars" onClick={e => e.target.value = ""} className="ttInput ttList" value={player.char} onChange={e => { handleChange(e, "char") }} />
 
-      <input className="ttInput titleInput" value={player.rank} onChange={e => { handleChange(e, "rank") }} />
-      <input className="ttInput titleInput ttLong" value={player.bio} onChange={e => { handleChange(e, "bio") }} />
+      <input className="ttInput titleInput" value={player.pronouns} onChange={e => { handleChange(e, "pronouns") }} />
+      <input className="ttInput titleInput ttLong" value={player.team} onChange={e => { handleChange(e, "team") }} />
       <div className="ttX" onClick={deleteTeam}><GoX /></div>
     </div>
   )

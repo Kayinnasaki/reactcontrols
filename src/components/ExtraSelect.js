@@ -36,6 +36,7 @@ const PlayerSelect = ({ board, side, set, players }) => {
                 placeholder="Select Player"
                 items={players}
                 onInput={TypeChange}
+                clearInputOnClick=""
                 onSelect={PlayerChange}
             />
         </div>

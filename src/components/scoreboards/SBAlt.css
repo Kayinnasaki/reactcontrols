@@ -1,0 +1,80 @@
+.overlay-alt {
+	position: absolute;	
+	left: 0px;
+	top: 0px;
+	background-image: url("./images/SBAlt.png");
+	width:1920px;
+	height:1080px;
+}
+
+.p1name-alt {
+    position: absolute;
+    color: white;
+    left: 317px;
+    top: 3px;
+    font-size: 36px; 
+    height: 45px;
+    width: 412px;
+    text-align: left;
+}
+
+.p2name-alt {
+    position: absolute;
+    font-size: 26pt;
+    color: white;
+    right: 317px;
+    top: 3px;
+    width: 412px;
+    padding-right: -412px;
+    height: 45px;
+    text-align: right;
+}
+
+.p1pronouns-alt {
+    position: absolute;
+    font-size: 14pt;
+    letter-spacing: -1px;
+    color: white;
+    left: 725px;
+    top: 1px;
+    width: 109px;
+    height: 45px;
+    text-align: center;
+
+}
+
+.p2pronouns-alt {
+    position: absolute;
+    font-size: 14pt;
+    letter-spacing: -1px;
+    color: white;
+    right: 725px;
+    top: 1px;
+    width: 109px;
+    padding-left:109px;
+    height: 45px;
+    text-align: center;
+}
+
+.p1score-alt {
+	position: absolute;
+    font-size: 32pt;
+    font-weight: bold;
+    color: white;
+    left: 245px;
+    top: -4px;
+    width: 60px;
+    text-align: center;
+}
+
+.p2score-alt {
+	position: absolute;
+    font-size: 32pt;
+    font-weight: bold;
+    color: white;
+    right: 245px;
+    top: -4px;
+    width: 60px;
+    padding-right: -60px;
+    text-align: center;
+}

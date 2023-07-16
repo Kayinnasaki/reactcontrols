@@ -12,7 +12,8 @@ const Footer = ({ config, configSet, sendName, boardview }) => {
                 <button className="footerInputBtn" onClick={sendName}><BiRefresh /></button>
             </div>
 
-            <div className="sblinkbox"><Link target="_blank" className="sblink" to={boardview + config.sbid}>{window.location.hostname + boardview + config.sbid}</Link></div>
+            <div className="sblinkbox"><Link target="_blank" className="sblink" to={boardview + config.sbid}>{window.location.host + boardview + config.sbid}</Link> 
+            <Link target="_blank" to="/boardlist"><span className="sbMore">More</span></Link></div>
         </div>
     )
 }

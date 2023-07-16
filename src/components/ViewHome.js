@@ -1,15 +1,40 @@
+import { useEffect } from 'react'
+import { useState } from 'react'
 import Nav from './Nav'
 import warmrock from './../warmrock.png'
 import tutorial1 from './../tutorial1.png'
 import tutorial2 from './../tutorial2.png'
 
-const ViewBoard = () => (
+const ViewBoard = () => {
+
+    const [newsContent, setNewsContent] = useState('');
+
+    useEffect(() => {
+      async function fetchNewsContent() {
+        try {
+          const response = await fetch('/news.txt'); // Adjust the file path if needed
+          const text = await response.text();
+          setNewsContent(text);
+        } catch (error) {
+          console.error('Error fetching news content:', error);
+        }
+      }
+  
+      fetchNewsContent();
+    }, []);
+    
+
+    return (
+
     <div className="home">
         <Nav/><br/>
         <img src={warmrock}/>
         <h1>Warm Rock Stream Overlay</h1>
         <div className="homeMain"><h4>The Warm Rock Stream Overlay is a tool modeled of off the <a href="https://bigtournament.golf/">bigtournament.golf</a> scoreboard that aims to be quick, easy, and remotely managable by multiple people with no signup required.</h4>
-        <br/><img src={tutorial1}/><br/><br/>
+        <h2>News</h2>
+        <div dangerouslySetInnerHTML={{ __html: newsContent }} />
+        <br/><h1>Tutorial</h1>
+        <img src={tutorial1}/><br/><br/>
         <div className="list">
         <ul>
             <li>The <strong>Score Board</strong> represents the info currently displayed on stream</li>
@@ -47,5 +72,5 @@ const ViewBoard = () => (
             ... I'll update this part later but hopefully the labeling is pretty straight forward.
         </div> 
      </div>
-)
+)}
 export default ViewBoard

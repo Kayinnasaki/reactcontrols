@@ -61,6 +61,10 @@ const WS = ({ type }) => {
     p2name: "",
     p1score: 0,
     p2score: 0,
+    p1pronouns: "",
+    p2pronouns: "",
+    p1team: "",
+    p2team: "",
     title: "",
 
   });
@@ -133,23 +137,26 @@ const WS = ({ type }) => {
     let temp = {}
     temp.p1name = workboard.p2name
     temp.p1score = workboard.p2score
+    temp.p1pronouns = workboard.p2pronouns
     temp.p2name = workboard.p1name
     temp.p2score = workboard.p1score
+    temp.p2pronouns = workboard.p1pronouns
     console.log("Swapping")
     workboardSet(temp)
+
   }
 
   const clear = () => {
     let temp = {}
     temp.p1name = ""
     temp.p1char = ""
-    temp.p1rank = ""
-    temp.p1bio = ""
+    temp.p1pronouns = ""
+    temp.p1team = ""
     temp.p1score = 0
     temp.p2name = ""
     temp.p2char = ""
-    temp.p2rank = ""
-    temp.p2bio = ""
+    temp.p2pronouns = ""
+    temp.p2team = ""
     temp.p2score = 0
     console.log("Clearing")
     workboardSet(temp)

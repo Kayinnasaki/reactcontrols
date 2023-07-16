@@ -5,6 +5,8 @@ import React from 'react'
 import SBDefault from './scoreboards/SBDefault'
 import SBWaseda from './scoreboards/SBWaseda'
 import SBWBig from './scoreboards/SBWBig'
+import SBAlt from './scoreboards/SBAlt'
+import SBSF6 from './scoreboards/SBSF6'
 
 const appConfig = window.appConfig
 const ws = new W3CWebSocket(appConfig.listenws)
@@ -43,6 +45,12 @@ const ViewHome = () => {
                 </Route>
                 <Route path="/board/wbig/:sbidParam?">
                     <SBWBig board={scoreboard} />
+                </Route>
+                <Route path="/board/sf6/:sbidParam?">
+                    <SBSF6 board={scoreboard} />
+                </Route>
+                <Route path="/board/alt/:sbidParam?">
+                    <SBAlt board={scoreboard} />
                 </Route>
             </Switch >
         </div>

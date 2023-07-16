@@ -75,8 +75,8 @@ const ToolsPlayer = ({ players, set, dataPush, challongeRequest, smashGGRequest 
                         </div>
                     </div>
                     <DataTool data={players} set={set} style="CollapsibleInner" />
-                    <div>
-                        <hr /><pre className="bold ttIndex">   [ID]            [Player]              [Char]        [Ranking]                   [Bio]</pre></div>
+                    <div>                                                                                                                       
+                        <hr /><pre className="bold ttIndex">   [ID]            [Player]              [Char]       [Pronouns]                 [Team]</pre></div>
                 </div>
                 <DataDisplay data={players} set={set} type="players" dataPush={dataPush} />
             </div>

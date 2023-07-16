@@ -87,8 +87,6 @@ const WBWaseda = ({ workboard, workboardSet, teams, teamsSet, config, configSet,
             <div className="wbFlex wbFooter wbBot">
                 <Footer config={config} configSet={configSet} sendName={sendName} boardview="/board/waseda/" />
             </div>
-            <br />
-
         </div>
     )
 }

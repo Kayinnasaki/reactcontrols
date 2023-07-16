@@ -1,6 +1,7 @@
 
 import ViewHome from './components/ViewHome'
 import ViewBoard from './components/ViewBoard'
+import ViewBoardList from './components/ViewBoardList'
 import ViewControls from './components/ViewControls'
 // CSS, split up only for my own sanity
 import './index.css'
@@ -38,6 +39,10 @@ const App = () => {
           
           <Route path="/board/:boardParam/:sbidParam?">
             <ViewBoard/>
+          </Route>
+
+          <Route path="/boardlist/:sbidParam?">
+            <ViewBoardList/>
           </Route>
 
         </Switch>

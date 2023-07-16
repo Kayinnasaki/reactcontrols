@@ -3,48 +3,105 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-  
+
     height: 2.2rem;
     width: 38rem;
-    height: 2.2rem;
     margin: 1rem;
     border-radius: var(--bord-curv);
-  
+
     color: var(--base-text);
     background-color: var(--topbar);
     font-weight: 600;
-  
+
     filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
 }
-  
+
+.Waseda {
+    height:2.8rem;
+}
+
 .sbHeaderPlayer {
-    display: inline;
     padding: 0px;
-    
-    height: 100%;
-    width: 40%;
-    
-    font-size: 1.5rem;
+
+    height: 2.2rem;
+    width: 15rem;
+
+    font-size: 1.2rem;
     font-weight: bold;
-    text-align: center;
+    text-align: center
+}
+
+.sbHeaderPlayerName {
+    width: 13rem;
+    overflow: hidden;
+    margin-top: 0.50rem;
+}
+
+.sbHeaderPlayerName.p1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sbHeaderPlayerName.p2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pro {
+    margin-top: 0.5rem;
+    height: 2.2rem;
+    line-height: 0.6rem;
+    text-align: center
+}
+
+.sbHeaderPlayerName>em {
+    font-size: 0.6rem;
 }
 
 .sbTitle {
-    display: inline;
+    display: flex;
+    position: absolute;
+    top: 0rem;
+    right: 15rem;
     width: 8rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 0.9rem;
+    height: 2.2rem;
+    overflow: hidden;
+    flex: content;
+    align-items: center;
+    justify-content: center;
 }
 
-.sbBox{
-    display: inline;
+.sbMore {
+    float: right;
+    background-color: var(--topbar-hover);
+    border-radius: var(--bord-curv);
+    padding: 0 0.5rem 0.1rem 0.5rem;
+    color: white;
+}
 
-    height: 100%;
+.sbBox {
+    position: absolute;
+    top: 0;
+    height: 2.2rem;
     width: 2.2rem;
-
     padding: 0px;
-    background-color:  var(--input-bk);
+    background-color: var(--input-bk);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sbBox.p1 {
+    left: 13rem;
+}
+
+.sbBox.p2 {
+    right: 13rem;
 }
 
 .sbR {
@@ -55,18 +112,60 @@
     float: left;
 }
 
-.sbSmall{
+.sbSmall {
     font-size: 0.8rem;
     overflow: hidden;
     width: 100%;
 }
 
-.sbP1{
-    text-align:right;
-    padding:1rem;
+.sbP1 {
+    text-align: right;
+    padding: 1rem;
 }
 
-.sbP2{
-    text-align:left;
-    padding:1rem;
+.sbP2 {
+    text-align: left;
+    padding: 1rem;
+}
+
+
+.WsbHeaderPlayer {
+    display: inline;
+    padding: 0px;
+
+    height: 100%;
+    width: 40%;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.WsbBox {
+    display: inline;
+
+    height: 100%;
+    width: 2.2rem;
+
+    padding: 0px;
+    background-color: var(--input-bk);
+}
+
+.WsbR {
+    float: right;
+}
+
+.WsbL {
+    float: left;
+}
+
+.WsbP1 {
+    text-align: right;
+    padding: 1rem;
+}
+
+.WsbP2 {
+    text-align: left;
+    padding: 1rem;
 }

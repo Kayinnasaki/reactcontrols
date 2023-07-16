@@ -1,0 +1,16 @@
+<h3>7/16/2023</h3>
+<p>Pronoun support added. Swap and Clear now automatically update the board. Scoreboards top menu now leads to a list
+of boards you can use. Clicking names no longer clears them (which makes searching for names a little slower, but using the name field without a playerlist more reasonable) "News" updated to be easier to update without recompiling the whole app.</p>
+<p>I want to add pulling down pronouns from start.gg but that might be down the road. We got team name stuff but they don't actually show up yet due to some dumb technical issues.</p>
+<p>Those issues are caused by TextFit which means big usernames will be made to fit without overflowing.</p>
+<p>you can now use beta.kayin.moe to use whatever in progress beta I have. Right now it should be exactly the same, but I might announce here if I have something I want to test.</p>
+
+
+<h3>7/13/2023</h3>
+<p>Doing some updates. Might finally be able to update and fix some little functionality
+    issues. Current plan is also to help add pronoun support.
+    You could do this with custom boards already but I don't want it to be that complicated.</p>
+<p>There are new boards, but no built in way to select them yet! If you have issues with how the current board covers up
+    the round indicators in Street Fighter 6, just change 'default'
+    in your board display url to either 'alt' or 'sf6'. An example would be</p>
+<pre>https://overlay.kayin.moe/board/sf6/test</pre>

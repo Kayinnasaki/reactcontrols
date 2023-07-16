@@ -17,9 +17,10 @@ body {
 	font-size: 26pt;
 	color: white;
 	left: 200px;
-	top: 0px;
+	top: -4px;
 	width: 600px;
 	text-align: right;
+	height: 46px;
 }
 
 .p2name {
@@ -30,17 +31,7 @@ body {
 	top: -4px;
 	width: 600px;
 	text-align: left;
-
-}
-
-.p1name {
-	position: absolute;
-	font-size: 26pt;
-	color: white;
-	left: 200px;
-	top: -4px;
-	width: 600px;
-	text-align: right;
+	height: 46px;
 
 }
 
@@ -68,22 +59,40 @@ body {
 
 }
 
+.p1pro {
+    position: absolute;
+    font-size: 10pt;
+    color: #d5d5d5;
+    left: 695px;
+    top: 34px;
+    width: 100px;
+    height: 20px;
+    text-align: right;
+    text-shadow: 0 0 9px black;
+    font-style: italic;
+}
+
+.p2pro {
+    position: absolute;
+    font-size: 10pt;
+    color: #d5d5d5;
+    right: 695px;
+    top: 34px;
+    width: 100px;
+    height: 20px;
+    text-align: left;
+    text-shadow: 0 0 9px black;
+    font-style: italic;
+}
+
 .title {
 	position: absolute;
 	font-size: 18pt;
 	color: white;
 	left: 880px;
-	top: -4px;
+	top: 0px;
 	width: 155px;
 	height: 50px;
 	text-align: center;
 	line-height: 18px;
-	display: flex;
-	align-items: center;
-
-}
-
-#title {
-	text-align: center;
-	width: 155px;
 }

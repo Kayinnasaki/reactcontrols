@@ -11,7 +11,7 @@ const Scoreticker = ({ board, entry, set, submit }) => {
             submit()
         }
 
-    }, [board, submit])
+    })
 
     const AddScore = (val) => {
         update = 1
