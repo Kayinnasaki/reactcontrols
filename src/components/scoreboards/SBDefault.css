@@ -61,27 +61,44 @@ body {
 
 .p1pro {
     position: absolute;
-    font-size: 10pt;
+    font-size: 11pt;
     color: #d5d5d5;
     left: 695px;
     top: 34px;
     width: 100px;
     height: 20px;
     text-align: right;
-    text-shadow: 0 0 9px black;
+    text-shadow:
+		-1px -1px 0 #000,
+		0   -1px 0 #000,
+		1px -1px 0 #000,
+		1px  0   0 #000,
+		1px  1px 0 #000,
+		0    1px 0 #000,
+		-1px  1px 0 #000,
+		-1px  0   0 #000;
+    font-style: italic;
     font-style: italic;
 }
 
 .p2pro {
     position: absolute;
-    font-size: 10pt;
+    font-size: 11pt;
     color: #d5d5d5;
     right: 695px;
     top: 34px;
     width: 100px;
     height: 20px;
     text-align: left;
-    text-shadow: 0 0 9px black;
+    text-shadow:
+		-1px -1px 0 #000,
+		0   -1px 0 #000,
+		1px -1px 0 #000,
+		1px  0   0 #000,
+		1px  1px 0 #000,
+		0    1px 0 #000,
+		-1px  1px 0 #000,
+		-1px  0   0 #000;
     font-style: italic;
 }
 

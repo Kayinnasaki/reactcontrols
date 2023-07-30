@@ -31,8 +31,8 @@ const ToolsQuick = ({ players, quick, set, dataPush, workboardSet, submit }) => 
         } else {
             results[side + "name"] = pull.label || ""
             results[side + "char"] = pull.char || ""
-            results[side + "bio"] = pull.bio || ""
-            results[side + "rank"] = pull.rank || ""
+            results[side + "pronouns"] = pull.pronouns || ""
+            results[side + "team"] = pull.team || ""
         }
         
         return results
