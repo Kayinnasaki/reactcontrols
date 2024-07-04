@@ -1,35 +1,25 @@
 import './SBAlt.css'
 import TextFit from 'textfit'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 const SBAlt = ({ board }) => {
-    const [animateClass, setAnimateClass] = useState('');
-
-    let sbClass = `overlay-alt ${board.showsb === false ? 'hide' : ''}`;
-
-    // Add animate class after 1 second
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setAnimateClass(" animate");
-        }, 200);
-
-        // Clean up the timer if the component unmounts
-        return () => clearTimeout(timer);
-    }, []);
-   
+    let sbClass = `overlay-alt ${board.showsb === false ? 'hide' : ''}`
 
     useEffect(() => {
         fit()
     })
 
-    function fit(){
+    function fit() {
         TextFit(document.getElementsByClassName('p1name-alt'), {minFontSize:10, maxFontSize: 36})
         TextFit(document.getElementsByClassName('p2name-alt'), {minFontSize:10, maxFontSize: 36})
         TextFit(document.getElementsByClassName('title'), {minFontSize:10, maxFontSize: 28,alignHoriz: true, alignVert: true, multiLine: true})
     }
 
+    // Use slug text to detect whether or not board info has been sent yet. If not, generate an empty div to prevent load and animation errors
+    if (board.title=="ZZLOADINGZZ") { return(<div></div>)}
+
     return (
-    <div className={sbClass + animateClass}>
+    <div className={sbClass}>
         <div id="p1name" className="p1name-alt">{board.p1name}</div>
         <div id="p2name" className="p2name-alt">{board.p2name}</div>
 

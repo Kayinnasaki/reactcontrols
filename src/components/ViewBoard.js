@@ -14,12 +14,13 @@ const ws = new W3CWebSocket(appConfig.listenws)
 const ViewHome = () => {
     const { sbidParam } = useParams()
 
+    // ZZLOADING is to communicate a loading state to Scoreboards
     const [scoreboard, scoreboardSet] = useState({
         p1name: "",
         p2name: "",
         p1score: 0,
         p2score: 0,
-        title: ""
+        title: "ZZLOADINGZZ"
     });
 
     ws.onopen = () => {

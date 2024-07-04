@@ -5,17 +5,12 @@
 	background-image: url("./images/SBAlt.png");
 	width:1920px;
 	height:1080px;
-    opacity:0;
+    transition-property: top;
+	transition-duration: 2s;
 }
 
 .hide {
     top: -65px;
-}
-
-.animate {
-	transition-property: top;
-	transition-duration: 2s;
-	opacity:1;
 }
 
 .p1name-alt {
