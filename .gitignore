@@ -2,3 +2,4 @@ server/boards.json
 server/config.js
 build
 node_modules
+deploy
