@@ -5,6 +5,7 @@
 	background-image: url("./images/SBSF6.png");
 	width:1920px;
 	height:1080px;
+	opacity:0;
 }
 
 .hide {
@@ -14,5 +15,5 @@
 .animate {
 	transition-property: top;
 	transition-duration: 2s;
-	opacity:100%;
+	opacity:1;
 }

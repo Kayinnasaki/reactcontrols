@@ -11,7 +11,7 @@ const SBDefault = ({ board }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAnimateClass(" animate");
-        }, 50);
+        }, 200);
 
         // Clean up the timer if the component unmounts
         return () => clearTimeout(timer);

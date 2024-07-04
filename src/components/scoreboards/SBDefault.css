@@ -10,7 +10,7 @@ body {
 	background-image: url("./images/SBDefault.png");
 	width:1920px;
 	height:1080px;
-	opacity:0%;
+	opacity:0;
 }
 
 .hide {
@@ -20,12 +20,7 @@ body {
 .animate {
 	transition-property: top;
 	transition-duration: 2s;
-	opacity:100%;
-}
-
-.invisible {
-	opacity: 0%;
-	transition-duration: 0s;
+	opacity:1;
 }
 
 .p1name {
