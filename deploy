@@ -1,6 +1,0 @@
-#!/bin/bash
-read -p "Password: " -s szPassword
-echo
-npm run build
-rm build/config.js
-sshpass -p $szPassword scp -v -r build/* kayin@kayin.moe:/home/kayin/web/httpdocs/overlay/
