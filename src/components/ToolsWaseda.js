@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 import isJson from 'is-valid-json'
 import cloneDeep from 'clone-deep'
 
-const TeamTool = ({ teams, set, send }) => {
+const TeamTool = ({ teams, set, dataPush, send }) => {
     const [motion, motionSet] = useState([-1, -1])
 
     const Sort = () => {
@@ -65,7 +65,7 @@ const TeamTool = ({ teams, set, send }) => {
 
                     <hr /><pre className="bold ttIndex">   [ID]           [Team Name]                 [Top]        [Top Char]      [Bottom]     [Bottom Char]</pre></div>
                 
-                    <DataDisplay data={teams} set={set} type="waseda" />
+                    <DataDisplay data={teams} set={set} dataPush={dataPush} type="waseda" />
 
             </div>
         </Collapsible>

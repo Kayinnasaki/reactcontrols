@@ -53,7 +53,8 @@ const WS = ({ type }) => {
     p2name: "",
     p1score: 0,
     p2score: 0,
-    title: ""
+    title: "",
+    showsb: true,
   });
 
   const [workboard, workboardSet] = useLegacyState({
@@ -66,7 +67,7 @@ const WS = ({ type }) => {
     p1team: "",
     p2team: "",
     title: "",
-
+    showsb: true,
   });
 
   const [config, configSet] = useLegacyState({
@@ -143,7 +144,6 @@ const WS = ({ type }) => {
     temp.p2pronouns = workboard.p1pronouns
     console.log("Swapping")
     workboardSet(temp)
-
   }
 
   const clear = () => {
@@ -159,6 +159,14 @@ const WS = ({ type }) => {
     temp.p2team = ""
     temp.p2score = 0
     console.log("Clearing")
+    workboardSet(temp)
+  }
+
+  const toggle = () => {
+    let temp = {}
+    console.log("Show Scoreboard:" + temp.showsb)
+    temp.showsb = !workboard.showsb
+    console.log("Show Scoreboard:" + temp.showsb)
     workboardSet(temp)
   }
 
@@ -335,7 +343,7 @@ const WS = ({ type }) => {
           <Switch>
             <Route path="/controls/:sbidParam?">
               <Scoreboard scoreboard={scoreboard} />
-              <WBPanel workboard={workboard} workboardSet={workboardSet} players={players} playersSet={playersSet} config={config} configSet={configSet} submit={submit} swap={swap} sendName={sendName} refresh={refresh} clear={clear} sync={sync} />
+              <WBPanel workboard={workboard} workboardSet={workboardSet} players={players} playersSet={playersSet} config={config} configSet={configSet} submit={submit} swap={swap} toggle={toggle} sendName={sendName} refresh={refresh} clear={clear} sync={sync} />
             </Route>
             <Route path="/waseda/:sbidParam?">
               <ScoreboardW scoreboard={scoreboard} />

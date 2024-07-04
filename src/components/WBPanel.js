@@ -1,4 +1,4 @@
-import { IoMdSwap } from 'react-icons/io'
+import { IoMdSwap, IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
 import { useEffect } from 'react'
 import Scoreticker from './Scoreticker'
 import Tempdatalist from './Tempdatalist'
@@ -9,7 +9,7 @@ import Footer from './Footer'
 import Collapsible from 'react-collapsible';
 
 let update = 0;
-const WBpanel = ({ workboard, workboardSet, players, playersSet, config, configSet, submit, swap, sendName, refresh, clear, sync }) => {
+const WBpanel = ({ workboard, workboardSet, players, playersSet, config, configSet, submit, swap, toggle, sendName, refresh, clear, sync }) => {
 
     useEffect(() => {
         if (update === 1) {
@@ -30,12 +30,18 @@ const WBpanel = ({ workboard, workboardSet, players, playersSet, config, configS
         clear()
     }
 
+    const sbToggle = () => {
+        update = 1
+        toggle()
+    }
+
     return (
         <div className="Workboard">
             <Tempdatalist />
             <div className="wbFlex">
                 <PlayerSelect board={workboard} players={players} side="p1" set={workboardSet} />
                 <button className="roundButton darkButton" onClick={wbSwap}><IoMdSwap /></button>
+                <button className="roundButton darkButton" onClick={sbToggle}>{workboard.showsb ? <IoIosArrowUp /> : <IoIosArrowDown />}</button>
                 <PlayerSelect board={workboard} players={players} side="p2" set={workboardSet} />
             </div>
             <div className="wbFlex">

@@ -16,6 +16,10 @@
     filter: drop-shadow(0rem 0.5rem 0.125rem #000000);
 }
 
+.Dim {
+    opacity: 50%
+}
+
 .Waseda {
     height:2.8rem;
 }

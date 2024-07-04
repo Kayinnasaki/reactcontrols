@@ -390,6 +390,11 @@ body {
 	background-image: url("./images/chars/elphelt.png");
 }
 
+.faust {
+	background-image: url("./images/chars/faust.png");
+	background-position-y: 40px
+}
+
 .ino {
 	background-image: url("./images/chars/ino.png");
 	background-position-x: 60%;
@@ -402,6 +407,17 @@ body {
 
 .jam {
 	background-image: url("./images/chars/jam.png");
+}
+
+.johnny {
+	background-image: url("./images/chars/johnny.png");
+	background-position-y: 80px;
+	background-position-x: -150px;
+}
+
+.kum {
+	background-image: url("./images/chars/kum.png");
+	background-position-y: -10px
 }
 
 .ky {
@@ -480,4 +496,8 @@ body {
 
 .pot.p2 {
 	background-position-x: -50px;
+}
+
+.faust.p2 {
+	background-position-x: 80px;
 }

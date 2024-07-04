@@ -39,7 +39,7 @@ const ViewBoardList = () => {
         The basic Waseda board.
         <br /><br /><br />
 
-        <Link target="_blank" className="sblink" to={"/board/wbig/" + sbid}><h1>Waseda Matchip Screen</h1></Link>
+        <Link target="_blank" className="sblink" to={"/board/wbig/" + sbid}><h1>Waseda Matchup Screen</h1></Link>
         <pre>{window.location.host + "/board/wbig/" + sbid}</pre><br />
 
         A matchup screen for Rev2 Waseda. Only Rev2 character portraits are supported at this time.

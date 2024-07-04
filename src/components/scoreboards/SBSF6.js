@@ -1,9 +1,24 @@
 import './SBSF6.css'
+import './SBAlt.css'
 import TextFit from 'textfit'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const SBSF6 = ({ board }) => {
-    
+    const [animateClass, setAnimateClass] = useState('');
+
+    let sbClass = `overlay-sf6 ${board.showsb === false ? 'hide' : ''}`;
+
+    // Add animate class after 1 second
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimateClass(" animate");
+        }, 50);
+
+        // Clean up the timer if the component unmounts
+        return () => clearTimeout(timer);
+    }, []);
+   
+
     useEffect(() => {
         fit()
     })
@@ -15,7 +30,7 @@ const SBSF6 = ({ board }) => {
     }
 
     return (
-    <div className="overlay-sf6">
+    <div className={sbClass + animateClass}>
         <div id="p1name" className="p1name-alt">{board.p1name}</div>
         <div id="p2name" className="p2name-alt">{board.p2name}</div>
 

@@ -10,6 +10,22 @@ body {
 	background-image: url("./images/SBDefault.png");
 	width:1920px;
 	height:1080px;
+	opacity:0%;
+}
+
+.hide {
+	top: -65px;
+}
+
+.animate {
+	transition-property: top;
+	transition-duration: 2s;
+	opacity:100%;
+}
+
+.invisible {
+	opacity: 0%;
+	transition-duration: 0s;
 }
 
 .p1name {
