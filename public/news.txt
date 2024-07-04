@@ -1,10 +1,14 @@
+<h3>7/4/2024</h3>
+<p>Hopefully fixed some of the Waseda bugs and added a controllable raise/lower effect for scoreboards so they can better be managed remotely.</p>
+<p>Both these changes are available in the <a href="https://beta.kayin.moe/">beta overlay page</a>, though you will have to use the appropriate beta scoreboard on obs for it work. The waseda fixes shouldn't matter, though you will still need to use the beta url to properly save teams.<p>
+<p>I'll push these fully live once I'm sure nothing horible breaks</p> 
+
 <h3>7/16/2023</h3>
 <p>Pronoun support added. Swap and Clear now automatically update the board. Scoreboards top menu now leads to a list
 of boards you can use. Clicking names no longer clears them (which makes searching for names a little slower, but using the name field without a playerlist more reasonable) "News" updated to be easier to update without recompiling the whole app.</p>
 <p>I want to add pulling down pronouns from start.gg but that might be down the road. We got team name stuff but they don't actually show up yet due to some dumb technical issues.</p>
 <p>Those issues are caused by TextFit which means big usernames will be made to fit without overflowing.</p>
 <p>you can now use beta.kayin.moe to use whatever in progress beta I have. Right now it should be exactly the same, but I might announce here if I have something I want to test.</p>
-
 
 <h3>7/13/2023</h3>
 <p>Doing some updates. Might finally be able to update and fix some little functionality
